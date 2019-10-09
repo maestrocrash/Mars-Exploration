@@ -8,5 +8,23 @@
 
 import Foundation
 
-print("Hello, World!")
+func marsExploration(s: String) -> Int {
+    var n: Int = 0
+    let line: [Character] = ["S", "O", "S"]
+    var i: Int = 0
+    var array = Array(s)
 
+    while array.count != 0 {
+        while i != line.count {
+            if array[i] != line[i] {
+                n += 1
+            }
+            i += 1
+        }
+        array.removeFirst(i)
+        i = 0
+    }
+    return n
+}
+
+print(marsExploration(s: "SOSSPSSQSSOR"))
